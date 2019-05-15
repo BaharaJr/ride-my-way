@@ -1,0 +1,128 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    background: lightgrey;
+}
+
+#sidemenu {
+    background: #302D43;
+    max-width: 280px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+}
+
+#sidemenu nav a {
+    display: block;
+    color: whitesmoke;
+    text-decoration: none;
+    font-weight: 300;
+    padding: 15px 30px;
+    transition: all 0.4s ease-in-out;
+}
+
+.active {
+    background: #282639;
+    border-left: 5px solid #92CF48;
+    padding: 15px 30px 15px 25px;
+    margin-top: 10px;
+}
+
+.fas {
+    color: #EAEDF3;
+    font-size: 1.4rem;
+    margin-right: 0.8rem;
+    display: inline-block;
+    width: 35px;
+    position: relative;
+    top: 2px;
+
+}
+
+.dlink {
+    margin-top: 250px;
+}
+
+#sidemenu nav a:hover {
+    background: #282639;
+    border-left: 5px solid #92CF48;
+    padding: 15px 30px 15px 25px;
+    color: #92CF48;
+}
+
+.i-active {
+    color: #92CF48;
+}
+
+.fa-info {
+    font-size: 35px;
+}
+
+.prof-dash {
+    display: flex;
+    margin-left: 100px;
+
+}
+
+header {
+    margin-left: 235px;
+    padding: 10px 0 15px 0px;
+    background: whitesmoke;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+a:-webkit-any-link {
+    text-decoration: none;
+    vertical-align: top;
+    height: 20px;
+
+}
+
+.logo:hover {
+    padding: 15px 30px 15px 25px;
+}
+
+.counter {
+    display: inline-block;
+    background: blue;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 5px;
+    color: white;
+    position: absolute;
+    top: -4px;
+    left: 10px;
+}
+
+.notification {
+    position: relative;
+}
+
+.user-img {
+    background: url(/media/IMG_9700.JPG) no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    border-radius: 50%;
+    margin-right: 0;
+}
+
+.fass {
+    color: black;
+}
+
+#prof-dash {
+    max-width: 280px;
+}
