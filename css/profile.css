@@ -59,7 +59,7 @@ body {
 }
 
 .fa-info {
-    font-size: 35px;
+    font-size: 20px;
 }
 
 .prof-dash {
@@ -123,6 +123,49 @@ a:-webkit-any-link {
     color: black;
 }
 
-#prof-dash {
-    max-width: 280px;
+#content-area {
+    margin-left: 280px;
+}
+
+.heading h1 {
+    color: purple;
+    font-size: 1.4rem;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.heading p {
+    color: #1b1b1b;
+    margin-bottom: 10px;
+    font-size: 1rem;
+    margin-top: 15px;
+}
+
+.cards {
+    padding: 5px 10px;
+    overflow: auto;
+    margin-bottom: 30px;
+    display: flex;
+}
+
+.card {
+    background: #fff;
+    border-radius: 5px;
+    padding: 20px;
+    overflow: auto;
+    margin-left: 20px;
+    margin-top: 5px;
+    text-align: center;
+}
+
+.col-rides {
+    width: 40%;
+}
+
+.card h3 {
+    font-size: 25px;
+}
+
+span {
+    font-size: 25px;
 }
