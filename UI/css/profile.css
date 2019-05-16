@@ -107,7 +107,7 @@ a:-webkit-any-link {
 }
 
 .user-img {
-    background: url(/media/IMG_9700.JPG) no-repeat center center;
+    background: url(/UI/media/IMG_9700.JPG) no-repeat center center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;

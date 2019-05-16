@@ -6,7 +6,7 @@
 .container {
 	width: 100%;
 	height: 100vh;
-	background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)), url(/media/ride) center no-repeat;
+	background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)), url(/UI/media/ride) center no-repeat;
 	background-size: cover;
 }
 
@@ -92,8 +92,7 @@
 
 .modal {
 	width: 400px;
-	background: linear-gradient(rgba(148, 42, 42, 0.8), rgba(185, 129, 129, 0.6)),
-		url(/media/ride) center no-repeat;
+	background:	transparent;
 	background-size: cover;
 	position: absolute;
 	top: 50%;
@@ -103,6 +102,7 @@
 	opacity: 0;
 	visibility: hidden;
 	transition: all .5s;
+	border: 2px solid #39C64E;
 }
 
 .display {
@@ -120,7 +120,7 @@
 
 .form-header {
 	text-align: center;
-	margin: 50px 0 80px 0;
+	margin: 20px 0 80px 0;
 	color: #fff;
 }
 
@@ -169,7 +169,7 @@
 	border: none;
 	outline: none;
 	border-radius: 30px;
-	background-color: rgb(3, 185, 115);
+	background-color: #39C64E;
 	color: #fff;
 	font-family: "Josefin Sans", sans-serif;
 	font-size: 16px;
@@ -224,7 +224,7 @@
 
 @media (max-width: 767px) {
 	.fullscreen-bg {
-		background: url('/media/ride') center center / cover no-repeat;
+		background: url('/UI/media/ride') center center / cover no-repeat;
 	}
 
 	.fullscreen-bg__video {
