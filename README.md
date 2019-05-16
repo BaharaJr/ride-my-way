@@ -1,16 +1,24 @@
-Ride-My-Way
-Overview
-Ride-My-Way app is a carpooling application that provides drivers with the ability to create ride offers and passengers to join available ride offers.
+RIDE-MY-WAY
 
-This capstone project is comprised of four (4) challenges. These challenges will be executed and implemented by the learners and review by facilitators & mentors on a weekly basis. The learners must complete all to be considered eligible for a certificate of completion.
+This is the web Application that enable use to find ride to somewhere in town. Application requires user to sign up and having the profile with person information such as his name, home address, workplace address, phone number, and many more...
 
-Required Features
-Users can create an account and log in.
-Drivers can add ride offers.
-Passengers can view all available ride offers.
-Passengers can see the details of a ride offer and request to join the ride. E.g. what time the ride leaves, where it is headed e.t.c.
-Drivers can view the requests to the ride offer they created.
-Drivers can either accept or reject a ride request.
-Optional Features
-Users can only respond to ride offers from their friends on the application.
-Passengers can get real time notifications when their request is accepted or rejected.
+Functionality of Web App
+User Signup && Signin
+
+Page where user can do the following:
+
+View all available ride offers.
+See the details of a ride and respond to it
+Offer a ride
+View and accept requests for the ride offer he/she created
+A page or pages for a user's profile which, at minimum diplays:
+
+The number of rides the user has given
+The number of rides the user has takes
+List of rides taken and given
+Tools && Languages used
+
+Languages
+Html (Markup language)
+Css (Styling Language)
+Javascript (Interactivity --> React to user Actions On the Web app)
