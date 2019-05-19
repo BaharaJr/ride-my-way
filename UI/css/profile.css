@@ -169,3 +169,26 @@ a:-webkit-any-link {
 span {
     font-size: 25px;
 }
+
+.tbl {
+    margin-top: 80px;
+    margin-bottom: 20px;
+}
+table {
+    width: 100%;
+}
+
+thead {
+    background: grey;
+}
+
+th {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    padding: 15px 10px;
+}
+
+tbody {
+    background: #fff;
+    text-align: center;
+}
