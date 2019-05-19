@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import './profile.css'
 import { Link } from 'react-router-dom';
 
-
 class Profile extends Component{
 
     render(){
@@ -19,17 +18,16 @@ class Profile extends Component{
                 <Link to="/"><i class="fas fa-car"></i>Rides Taken</Link>
                 <Link to="./request"><i class="fas fa-car-side"></i>Request Ride</Link>
                 <Link to="/"><i class="fas fa-taxi"></i>View Rides</Link>
-                <Link to="/" class="dlink active"><i class="fas fa-user-circle i-active"></i>Become a Driver</Link>
+                <Link to="./signupdriver" class="dlink active"><i class="fas fa-user-circle i-active"></i>Become a Driver</Link>
             </nav>
         </section>
         <header>
-            <Link to="/" class="notification">
+            <Link to="/notifications" class="notification">
                 <i class="fas fa-bell fass"></i>
                 <span class="counter">5</span>
             </Link>
             <Link to="/">
-                <div class="user-img">
-                </div>
+                <div class="userimg" />
                 <i class="fas fa-caret-down fass"></i>
             </Link>
         </header>
@@ -59,8 +57,8 @@ class Profile extends Component{
                     </div>
                 </div>
             </div>
+            <h1 class="tbl">Available Rides</h1>
             <table>
-                <h1 class="tbl">Available Rides</h1>
                 <thead>
                     <tr>
                         <th>Pickup</th>

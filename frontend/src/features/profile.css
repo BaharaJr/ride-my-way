@@ -91,11 +91,11 @@ a:-webkit-any-link {
 .counter {
     display: inline-block;
     background: blue;
-    width: 15px;
-    height: 15px;
+    width: 13px;
+    height: 13px;
     border-radius: 50%;
     text-align: center;
-    font-size: 5px;
+    font-size: 10px;
     color: white;
     position: absolute;
     top: -4px;
