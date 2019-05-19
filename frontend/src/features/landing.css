@@ -1,0 +1,235 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+.container {
+	width: 100%;
+	height: 100vh;
+	background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)), url(/front-end/src/features/media/ride) center no-repeat;
+	background-size: cover;
+}
+
+.banner-text {
+	position: absolute;
+	top: 65%;
+	left: 2.5%;
+	transform: translate();
+}
+
+.banner-text h1 {
+	color: #fff;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 60px;
+	font-weight: 300;
+	letter-spacing: 2px;
+	margin-bottom: 20px;
+
+}
+
+.banner-text p {
+	color: #eee;
+	font-family: "Josefin sans"sans-serif;
+	font-size: 30px;
+	font-weight: 300;
+	letter-spacing: 1px;
+	text-align: left;
+}
+
+.btns {
+	position: absolute;
+	top: 50px;
+	right: 60px;
+}
+
+.btn {
+	width: 170px;
+	padding: 10px 15px;
+	border-radius: 50px;
+	font-family: "Josefin sans", sans-serif;
+	font-size: 20px;
+	letter-spacing: 1px;
+	outline: none;
+	cursor: pointer;
+	color: #fff;
+	border: 2px solid #39C64E;
+	transition: transform 0.3s;
+	font-weight: bold;
+}
+
+.login-btn {
+	background-color: #39C64E;
+	margin-right: 25px;
+
+}
+
+.signup-btn {
+	background-color: transparent;
+}
+
+.btn:hover {
+	transform: translateY(-2px);
+}
+
+.btn:active {
+	transform: translateY(-0);
+}
+
+.form-container {
+	position: fixed;
+	background-color: rgba(0, 0, 0, 0.7);
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	opacity: 0;
+	visibility: hidden;
+	transition: all .5s;
+}
+
+.disable {
+	opacity: 5;
+	visibility: visible;
+}
+
+.modal {
+	width: 400px;
+	background:	transparent;
+	background-size: cover;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	border-radius: 20px;
+	opacity: 0;
+	visibility: hidden;
+	transition: all .5s;
+	border: 2px solid #39C64E;
+}
+
+.display {
+	opacity: 1;
+	visibility: visible;
+}
+
+.x-btn {
+	position: absolute;
+	right: 20px;
+	font-size: 50px;
+	color: #222;
+	cursor: pointer;
+}
+
+.form-header {
+	text-align: center;
+	margin: 20px 0 80px 0;
+	color: #fff;
+}
+
+.form-header h1 {
+	font-family: "Josefin Sans", sans-serif;
+	font-size: 40px;
+	font-weight: 300;
+	margin-bottom: 20px;
+}
+
+.form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.input-group {
+	margin-bottom: 10px;
+	position: relative;
+}
+
+.input-group input {
+	width: 250px;
+	padding: 15px 15px 15px;
+	border: none;
+	outline: none;
+	border-radius: 30px;
+	background: rgba(0, 0, 0, 0.6);
+	font-size: 20px;
+	color: #ddd;
+	text-align: center;
+	font-family: "Josefin sans", sans-serif;
+}
+
+.input-group i {
+	position: absolute;
+	top: 13px;
+	left: 17px;
+	font-size: 18px;
+	color: #aaa;
+}
+
+.form button {
+	width: 310px;
+	padding: 12px;
+	border: none;
+	outline: none;
+	border-radius: 30px;
+	background-color: #39C64E;
+	color: #fff;
+	font-family: "Josefin Sans", sans-serif;
+	font-size: 16px;
+	text-transform: uppercase;
+	margin: 10px 0 50px 0;
+	box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+	cursor: pointer;
+}
+
+.form button:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.form button:active {
+	transform: translateY(0);
+}
+
+
+
+.fullscreen-bg {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	overflow: hidden;
+	z-index: -100;
+}
+
+.fullscreen-bg__video {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+@media (min-aspect-ratio: 16/9) {
+	.fullscreen-bg__video {
+		height: 300%;
+		top: -100%;
+	}
+}
+
+@media (max-aspect-ratio: 16/9) {
+	.fullscreen-bg__video {
+		width: 300%;
+		left: -100%;
+	}
+}
+
+@media (max-width: 767px) {
+	.fullscreen-bg {
+		background: url('/front-end/src/features/media/ride') center center / cover no-repeat;
+	}
+
+	.fullscreen-bg__video {
+		display: none;
+	}
+}
