@@ -17,8 +17,8 @@ class HomePage extends Component {
                 <p>Request, Share and Offer Rides</p>
             </div>
             <div className="btns">
-                <button className="btn login-btn">LogIn</button>
-                <button className="btn signup-btn"> Sign Up</button>
+                <button className="btn login-btn">LOGIN</button>
+                <button className="btn signup-btn">SIGN UP</button>
             </div>
             <div className="form-container">
                 <div className="signup-form-wrapper modal">
