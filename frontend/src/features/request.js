@@ -11,7 +11,7 @@ class Request extends Component{
             <section id="sidemenu">
             <nav>
                 <div class="logo">
-                    <Link to="./home">
+                    <Link to="/">
                         <h1>Ride My Way</h1>
                     </Link>
                 </div>
@@ -19,15 +19,15 @@ class Request extends Component{
                 <Link to="/"><i class="fas fa-car"></i>Rides Taken</Link>
                 <Link to="./request"><i class="fas fa-car-side"></i>Request Ride</Link>
                 <Link to="/"><i class="fas fa-taxi"></i>View Rides</Link>
-                <Link to="/" class="dlink active"><i class="fas fa-user-circle i-active"></i>Become a Driver</Link>
+                <Link to="/signupdriver" class="dlink active"><i class="fas fa-user-circle i-active"></i>Become a Driver</Link>
             </nav>
         </section>
         <header>
-            <Link to="/" class="notification">
+            <Link to="/notifications" class="notification">
                 <i class="fas fa-bell fass"></i>
                 <span class="counter">5</span>
             </Link>
-            <Link to="/">
+            <Link to="/miniprofile">
                 <div class="user-img">
                 </div>
                 <i class="fas fa-caret-down fass"></i>
