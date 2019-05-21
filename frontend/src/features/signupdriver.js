@@ -3,6 +3,13 @@ import {Link} from 'react-router-dom';
 import './driver.css';
 
 class SignupDriver extends Component {
+    constuctor() {
+        this.handlePageChange = this.handlePageChange.bind(this);
+        this.handleRouteChange = this.handleRouteChange.bind(this);
+      }
+      handlePageChange() {
+        window.location = "/driver";
+      }
     render (){
         return (
             <div>
@@ -37,7 +44,7 @@ class SignupDriver extends Component {
                         <i class="far fa-file-alt"></i>
                             <input type="integer" placeholder="Car Licence" />
                         </div>
-                        <button className="btnss"> <Link to="./profile" ></Link>Sign Up</button>
+                        <h1 className="btnss" onClick={this.handlePageChange}> <Link to="/driver" ></Link>Sign Up</h1>
                     </form>
                 </div>
         )

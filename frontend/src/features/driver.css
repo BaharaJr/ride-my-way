@@ -67,18 +67,20 @@ form {
 }
 
 .btnss {
-        width: 270px;
-        padding: 10px 15px;
-        border-radius: 50px;
-        font-family: "Josefin sans", sans-serif;
-        font-size: 20px;
-        letter-spacing: 1px;
-        outline: none;
-        cursor: pointer;
-        color: #fff;
-        background: #39C64E;
-        transition: transform 0.3s;
-        font-weight: bold;
+	width: 250px;
+	padding: 12px;
+	border: none;
+	outline: none;
+	border-radius: 30px;
+	background-color: #39C64E;
+	color: #fff;
+	font-family: "Josefin Sans", sans-serif;
+	font-size: 20px;
+	text-transform: uppercase;
+	margin: 10px 0 50px 0;
+	box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+	cursor: pointer;
+	text-align: center;
 }
 
 a:-webkit-any-link {
