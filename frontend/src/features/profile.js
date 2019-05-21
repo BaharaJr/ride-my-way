@@ -28,7 +28,10 @@ class Profile extends Component{
             </Link>
             <Link to="/">
                 <div class="userimg" />
-                <i class="fas fa-caret-down fass"></i>
+                <i class="fas fa-caret-down fass">
+                <div class="dropdown-content">
+</div>
+                </i>
             </Link>
         </header>
         <section id="content-area">
