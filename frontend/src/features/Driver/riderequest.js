@@ -1,13 +1,12 @@
-import React, {Component} from 'react';
-import './driver.css'
+import React, { Component } from 'react';
+import './driver.css';
 import { Link } from 'react-router-dom';
 
-class Driver extends Component{
-
-    render(){
-        return(
+class RideRequests extends Component {
+    render() {
+        return (
             <div>
-            <section id="sidemenu">
+               <section id="sidemenu">
             <nav>
                 <div class="logo">
                     <Link to="/">
@@ -15,9 +14,9 @@ class Driver extends Component{
                     </Link>
                 </div>
                 <Link to="driver" class="active"><i class="fas fa-home i-active" />Home</Link>
-                <Link to="/"><i class="fas fa-plus-circle"></i>Add Offer</Link>
-                <Link to="./request"><i class="fas fa-car-side"></i>View Requests</Link>
-                <Link to="/"><i class="fas fa-taxi"></i>Ride Offers</Link>
+                <Link to="/addoffer"><i class="fas fa-plus-circle"></i>Add Offer</Link>
+                <Link to="./riderequest"><i class="fas fa-car-side"></i>View Requests</Link>
+                <Link to="/rideoffer"><i class="fas fa-taxi"></i>Ride Offers</Link>
             </nav>
         </section>
         <header>
@@ -94,9 +93,9 @@ class Driver extends Component{
             </table>
     
         </section>
+
             </div>
         )
     }
 }
-
-export default Driver;
+export default RideRequests;
