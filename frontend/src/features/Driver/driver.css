@@ -20,8 +20,8 @@
 	font-family: "Ubuntu", sans-serif;
 	font-size: 40px;
 	font-weight: 300;
-    margin-bottom: 20px;
-    color: black;
+	margin-bottom: 10px;
+	color: black;
 }
 
 form {
@@ -58,12 +58,12 @@ form {
 
 
 .log {
-    color: whitesmoke !important;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 35px;
-    font-weight: 500px;
-    background: #302D43;
-    padding: 15px;
+	color: whitesmoke !important;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 35px;
+	font-weight: 500px;
+	background: #302D43;
+	padding: 15px;
 }
 
 .btnss {
@@ -84,6 +84,38 @@ form {
 }
 
 a:-webkit-any-link {
-    color: whitesmoke;
-    cursor: pointer;
+	color: whitesmoke;
+	cursor: pointer;
+}
+
+.inputs {
+	border-radius: 7px;
+	width: 30%;
+	height: 32px;
+	text-align: center;
+	margin-top: 10px
+}
+
+.p-groups {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 30px;
+	margin-top: 5px;
+}
+
+.stop-over {
+	font-family: "Josefin sans", Helvetica;
+	margin-top: 15px;
+}
+
+#offer-group {
+	margin-left: 40%;
+}
+
+.datepicker-input {
+	width: 90%;
+	height: 32px;
+	border-radius: 7px;
+	text-align: center;
+	font-size: 1em;
+
 }

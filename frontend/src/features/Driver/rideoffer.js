@@ -1,13 +1,12 @@
-import React, {Component} from 'react';
-import './driver.css'
+import React, { Component } from 'react';
+import './driver.css';
 import { Link } from 'react-router-dom';
 
-class Driver extends Component{
-
-    render(){
-        return(
+class Rideoffers extends Component {
+    render() {
+        return (
             <div>
-            <section id="sidemenu">
+               <section id="sidemenu">
             <nav>
                 <div class="logo">
                     <Link to="/">
@@ -15,8 +14,8 @@ class Driver extends Component{
                     </Link>
                 </div>
                 <Link to="driver" class="active"><i class="fas fa-home i-active" />Home</Link>
-                <Link to="./addoffer"><i class="fas fa-plus-circle"></i>Add Offer</Link>
-                <Link to="/riderequest"><i class="fas fa-car-side"></i>View Requests</Link>
+                <Link to="/addoffer"><i class="fas fa-plus-circle"></i>Add Offer</Link>
+                <Link to="./riderequest"><i class="fas fa-car-side"></i>View Requests</Link>
                 <Link to="/rideoffer"><i class="fas fa-taxi"></i>Ride Offers</Link>
             </nav>
         </section>
@@ -43,27 +42,15 @@ class Driver extends Component{
                         <span>23</span>
                     </div>
                 </div>
-                <div class="col-rides">
-                    <div class="card">
-                        <h3>Requests Accepted</h3>
-                        <span>56</span>
-                    </div>
-                </div>
-                <div class="col-rides">
-                    <div class="card">
-                        <h3>Total Rides</h3>
-                        <span>79</span>
-                    </div>
-                </div>
+
             </div>
-            <h1 class="tbl">Ride Requests</h1>
+            <h1 class="tbl">Ride Offers Created</h1>
             <table>
                 <thead>
                     <tr>
                         <th>Pickup</th>
-                        <th>Destination</th>
-                        <th>Name</th>
-                        <th>Phone Number</th>
+                        <th>Drop-off</th>
+                        <th>Date</th>
                         <th>Time</th>
                     </tr>
                 </thead>
@@ -71,13 +58,11 @@ class Driver extends Component{
                     <td>Magomeni</td>
                     <td>Buza</td>
                     <td>Harith Minhajj</td>
-                    <td>09876543</td>
                     <td>28/10/2019</td>
                 </tr>
                 <tr>
                     <td>Mliman</td>
                     <td>Seedspace</td>
-                    <td>Leticia</td>
                     <td>5678909876543</td>
                     <td>22/10/2018</td>
                 </tr>
@@ -85,7 +70,6 @@ class Driver extends Component{
                     <td>Magomeni</td>
                     <td>Buza</td>
                     <td>Harith Minhajj</td>
-                    <td>098234567</td>
                     <td>25/10/2019</td>
                 </tr>
                 <tbody>
@@ -94,9 +78,9 @@ class Driver extends Component{
             </table>
     
         </section>
+
             </div>
         )
     }
 }
-
-export default Driver;
+export default Rideoffers;
