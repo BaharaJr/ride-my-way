@@ -10,6 +10,8 @@ import Signup from './signup';
 import RideRequests from './Driver/riderequest';
 import AddOffer from './Driver/addoffer';
 import RideOffers from './Driver/rideoffer';
+import Ride from './passenger/rides';
+import Taken from './passenger/taken';
 
 const MainRoutes = () => (
     <Switch>
@@ -23,6 +25,8 @@ const MainRoutes = () => (
         <Route path="/riderequest" component={RideRequests} />
         <Route path="/addoffer" component={AddOffer} />
         <Route path="/rideoffer" component={RideOffers} />
+        <Route path="/rides" component={Ride} />
+        <Route path="/taken" component={Taken} />
     </Switch>
 )
 

@@ -174,6 +174,7 @@ span {
     margin-top: 50px;
     margin-bottom: 20px;
 }
+
 table {
     width: 99%;
     border-spacing: 0;
@@ -192,4 +193,32 @@ th {
 tbody {
     background: #fff;
     text-align: center;
+}
+
+.request {
+    font-family: "Josefin sans", Arial, Helvetica, sans-serif;
+    font-size: 40px;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.p-profile {
+    display: flex;
+    flex-direction: row;
+}
+
+.h-profile {
+    margin-bottom: 40px;
+    font-family: "Josefin sans", Arial, Helvetica, sans-serif;
+    text-align: center;
+    font-weight: 500;
+    font-size: 40px;
+}
+
+.card-profile {
+    padding: 10px 20px;
+}
+
+.card-profile h2 {
+    margin-bottom: 10px;
 }
