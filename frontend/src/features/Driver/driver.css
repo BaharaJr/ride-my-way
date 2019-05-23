@@ -107,15 +107,32 @@ a:-webkit-any-link {
 	margin-top: 15px;
 }
 
-#offer-group {
-	margin-left: 40%;
-}
-
 .datepicker-input {
-	width: 90%;
+	width: 100%;
 	height: 32px;
 	border-radius: 7px;
 	text-align: center;
 	font-size: 1em;
 
+}
+
+
+th {
+	font-size: 0.8rem;
+	padding: 15px 10px;
+	font-weight: 500;
+	text-align: left;
+	text-transform: uppercase;
+	color: #EAEDF3;
+	border-radius: 5px;
+	text-align: center;
+}
+
+tbody {
+	font-size: 0.8rem;
+}
+
+td {
+	padding: 15px 10px;
+	background: #fff;
 }

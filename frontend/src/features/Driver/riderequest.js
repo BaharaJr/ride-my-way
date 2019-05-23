@@ -38,7 +38,7 @@ class RideRequests extends Component {
             <div class="cards">
                 <div class="col-rides">
                     <div class="card">
-                        <h3>Rides Offers Created</h3>
+                        <h3>Requests Denied</h3>
                         <span>23</span>
                     </div>
                 </div>
@@ -59,8 +59,8 @@ class RideRequests extends Component {
             <table>
                 <thead>
                     <tr>
-                        <th>Pickup</th>
-                        <th>Destination</th>
+                        <th>Pick-up</th>
+                        <th>Drop-off</th>
                         <th>Name</th>
                         <th>Phone Number</th>
                         <th>Time</th>

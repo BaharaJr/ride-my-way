@@ -14,11 +14,11 @@ class Profile extends Component{
                         <h1>Ride My Way</h1>
                     </Link>
                 </div>
-                <Link to="profile" class="active"><i class="fas fa-home i-active" />Home</Link>
+                <Link to="profile" class="active"><i class="fas fa-home" />Home</Link>
                 <Link to="/"><i class="fas fa-car"></i>Rides Taken</Link>
                 <Link to="/request"><i class="fas fa-car-side"></i>Request Ride</Link>
                 <Link to="/"><i class="fas fa-taxi"></i>View Rides</Link>
-                <Link to="/driver" class="dlink active"><i class="fas fa-user-circle i-active"></i>Become a Driver</Link>
+                <Link to="/signupdriver" class="dlink active"><i class="fas fa-user-circle i-active"></i>Become a Driver</Link>
             </nav>
         </section>
         <header>

@@ -9,8 +9,8 @@ class Driver extends Component{
             <div>
             <section id="sidemenu">
             <nav>
-                <div class="logo">
-                    <Link to="/">
+                <div>
+                    <Link to="/driver">
                         <h1>Ride My Way</h1>
                     </Link>
                 </div>

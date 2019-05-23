@@ -8,6 +8,8 @@ import Driver from './Driver/driver';
 import Login from './login';
 import Signup from './signup';
 import RideRequests from './Driver/riderequest';
+import AddOffer from './Driver/addoffer';
+import RideOffers from './Driver/rideoffer';
 
 const MainRoutes = () => (
     <Switch>
@@ -19,6 +21,8 @@ const MainRoutes = () => (
         <Route path="/login" component={Login} />
         <Route path="/signup" component={Signup} />
         <Route path="/riderequest" component={RideRequests} />
+        <Route path="/addoffer" component={AddOffer} />
+        <Route path="/rideoffer" component={RideOffers} />
     </Switch>
 )
 
