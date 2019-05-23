@@ -48,7 +48,7 @@ class Taken extends Component{
                     </div>
                 </div>
             </div>
-            <h1 class="tbl">Available Rides</h1>
+            <h1 class="tbl">Rides Taken</h1>
             <table>
                 <thead>
                     <tr>
