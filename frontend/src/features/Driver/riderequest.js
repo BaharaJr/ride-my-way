@@ -9,7 +9,7 @@ class RideRequests extends Component {
                <section id="sidemenu">
             <nav>
                 <div class="logo">
-                    <Link to="/">
+                    <Link to="/driver">
                         <h1>Ride My Way</h1>
                     </Link>
                 </div>
