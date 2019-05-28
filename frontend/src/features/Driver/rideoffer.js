@@ -1,86 +1,95 @@
-import React, { Component } from 'react';
-import './driver.css';
-import { Link } from 'react-router-dom';
+import React, { Component } from "react";
+import "./driver.css";
+import { Link } from "react-router-dom";
 
 class Rideoffers extends Component {
-    render() {
-        return (
-            <div>
-               <section id="sidemenu">
-            <nav>
-                <div class="logo">
-                    <Link to="/driver">
-                        <h1>Ride My Way</h1>
-                    </Link>
-                </div>
-                <Link to="driver" class="active"><i class="fas fa-home i-active" />Home</Link>
-                <Link to="/addoffer"><i class="fas fa-plus-circle"></i>Add Offer</Link>
-                <Link to="./riderequest"><i class="fas fa-car-side"></i>View Requests</Link>
-                <Link to="/rideoffer"><i class="fas fa-taxi"></i>Ride Offers</Link>
-            </nav>
+  constructor() {
+    super();
+    this.state = {
+      rideoffers: []
+    };
+  }
+  componentDidMount() {
+    fetch("/api/v1/rideOffers")
+      .then(res => res.json)
+      .then(rideoffers =>
+        this.setState({ rideoffers }, () =>
+          console.log("ride offers", rideoffers)
+        )
+      );
+  }
+  render() {
+    return (
+      <div>
+        <section id="sidemenu">
+          <nav>
+            <div className="logo">
+              <Link to="/driver">
+                <h1>Ride My Way</h1>
+              </Link>
+            </div>
+            <Link to="driver" className="active">
+              <i className="fas fa-home i-active" />
+              Home
+            </Link>
+            <Link to="/addoffer">
+              <i className="fas fa-plus-circle" />
+              Add Offer
+            </Link>
+            <Link to="./riderequest">
+              <i className="fas fa-car-side" />
+              View Requests
+            </Link>
+            <Link to="/rideoffer">
+              <i className="fas fa-taxi" />
+              Ride Offers
+            </Link>
+          </nav>
         </section>
         <header>
-            <Link to="/notifications" class="notification">
-                <i class="fas fa-bell fass"></i>
-                <span class="counter">5</span>
-            </Link>
-            <Link to="/miniprofile">
-                <div class="userimg" />
-                <i class="fas fa-caret-down fass"></i>
-            </Link>
+          <Link to="/notifications" className="notification">
+            <i className="fas fa-bell fass" />
+            <span className="counter">5</span>
+          </Link>
+          <Link to="/miniprofile">
+            <div className="userimg" />
+            <i className="fas fa-caret-down fass" />
+          </Link>
         </header>
         <section id="content-area">
-            <div class="heading">
-                <p> Hi Bennett</p>
-            </div>
-            <hr/>
-    
-            <div class="cards">
-                <div class="col-rides">
-                    <div class="card">
-                        <h3>Rides Offers Created</h3>
-                        <span>23</span>
-                    </div>
-                </div>
+          <div className="heading">
+            <p> Hi Bennett</p>
+          </div>
+          <hr />
 
+          <div className="cards">
+            <div className="col-rides">
+              <div className="card">
+                <h3>Rides Offers Created</h3>
+                <span>23</span>
+              </div>
             </div>
-            <h1 class="tbl">Ride Offers Created</h1>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Pickup</th>
-                        <th>Drop-off</th>
-                        <th>Date</th>
-                        <th>Time</th>
-                    </tr>
-                </thead>
-                <tr>
-                    <td>Magomeni</td>
-                    <td>Buza</td>
-                    <td>Harith Minhajj</td>
-                    <td>28/10/2019</td>
-                </tr>
-                <tr>
-                    <td>Mliman</td>
-                    <td>Seedspace</td>
-                    <td>5678909876543</td>
-                    <td>22/10/2018</td>
-                </tr>
-                <tr>
-                    <td>Magomeni</td>
-                    <td>Buza</td>
-                    <td>Harith Minhajj</td>
-                    <td>25/10/2019</td>
-                </tr>
-                <tbody>
-    
-                </tbody>
-            </table>
-    
+          </div>
+          <h1 className="tbl">Ride Offers Created</h1>
+          <table>
+            <thead>
+              <tr>
+                <th>Pickup</th>
+                <th>Drop-off</th>
+                <th>Date</th>
+                <th>Time</th>
+              </tr>
+            </thead>
+            <tr>
+              <td>Magomeni</td>
+              <td>Buza</td>
+              <td>Harith Minhajj</td>
+              <td>28/10/2019</td>
+            </tr>
+          </table>
         </section>
-
-            </div>
-        )
-    }
+      </div>
+    );
+  }
 }
 export default Rideoffers;
