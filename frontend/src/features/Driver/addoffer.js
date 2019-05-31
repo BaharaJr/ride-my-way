@@ -5,8 +5,8 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
 class AddOffer extends Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state = {
       startDate: new Date()
     };
@@ -78,9 +78,6 @@ class AddOffer extends Component {
                 placeholder="Drop-off here"
                 className="inputs"
               />
-              <p className="p-groups">Stopovers</p>
-              <p className="stop-over">Add your stopover points</p>
-              <input type="text" placeholder="Stopovers" className="inputs" />
               <p className="p-groups">Date & Time</p>
               <DatePicker
                 selected={this.state.startDate}

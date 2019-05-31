@@ -81,19 +81,12 @@ class Rideoffers extends Component {
               <li key={rideOffers.id}>{rideOffers.Pickup}</li>)}</td>
               <td> {this.state.rideOffers.map(rideOffers => 
               <li key={rideOffers.id}>{rideOffers.Dropoff}</li>)}</td>
-              <td>Harith Minhajj</td>
-              <td>28/10/2019</td>
+              <td>{this.state.rideOffers.map(rideOffers => 
+              <li key={rideOffers.id}>{rideOffers.Date}</li>)}</td>
+              <td>{this.state.rideOffers.map(rideOffers => 
+              <li key={rideOffers.id}>{rideOffers.Time}</li>)}</td>
             </tr>
-          </table> 
-          {/* <ul>
-          {this.state.rideOffers.bind(this)(rideOffers => 
-            <li key={rideOffers.id}>{rideOffers.Pickup}</li>)}
-          </ul>
-          <ul>
-            {this.state.rideOffers.map(rideOffers => 
-              <li key={rideOffers.id}>{rideOffers.Pickup}</li>)}
-          </ul>
-            */}
+          </table>
         </section>
       </div>
     );

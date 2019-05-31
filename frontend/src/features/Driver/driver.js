@@ -3,6 +3,17 @@ import "./driver.css";
 import { Link } from "react-router-dom";
 
 class Driver extends Component {
+  constructor() {
+    super();
+    this.state = {
+      rideRequests: []
+    };
+  }
+  componentDidMount() {
+    fetch('/api/v1/rideRequests')
+      .then(res => res.json())
+      .then(rideRequests => this.setState({ rideRequests }));
+  }
   render() {
     return (
       <div>
@@ -69,32 +80,20 @@ class Driver extends Component {
             <thead>
               <tr>
                 <th>Pickup</th>
-                <th>Destination</th>
+                <th>Drop-off</th>
                 <th>Name</th>
                 <th>Phone Number</th>
-                <th>Time</th>
               </tr>
             </thead>
             <tr>
-              <td>Magomeni</td>
-              <td>Buza</td>
-              <td>Harith Minhajj</td>
-              <td>09876543</td>
-              <td>28/10/2019</td>
-            </tr>
-            <tr>
-              <td>Mliman</td>
-              <td>Seedspace</td>
-              <td>Leticia</td>
-              <td>5678909876543</td>
-              <td>22/10/2018</td>
-            </tr>
-            <tr>
-              <td>Magomeni</td>
-              <td>Buza</td>
-              <td>Harith Minhajj</td>
-              <td>098234567</td>
-              <td>25/10/2019</td>
+              <td>{this.state.rideRequests.map(rideRequests => 
+              <li key={rideRequests.id}>{rideRequests.Pickup}</li>)}</td>
+              <td>{this.state.rideRequests.map(rideRequests => 
+              <li key={rideRequests.id}>{rideRequests.Dropoff}</li>)}</td>
+              <td>{this.state.rideRequests.map(rideRequests => 
+              <li key={rideRequests.id}>{rideRequests.Name}</li>)}</td>
+              <td>{this.state.rideRequests.map(rideRequests => 
+              <li key={rideRequests.id}>{rideRequests.Phone}</li>)}</td>
             </tr>
             <tbody />
           </table>

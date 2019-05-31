@@ -48,6 +48,30 @@ class HomePage extends Component {
             </div>
           </div>
         </div>
+        {/* <h1 className="h-profile">Go literally anywhere. From anywhere.</h1>
+          <div className="p-profile">
+            <div className="card-profile">
+              <h2> Smart </h2>
+              <p>
+                With access to millions of journeys, you can quickly find people
+                nearby travelling your way.
+              </p>
+            </div>
+            <div className="card-profile">
+              <h2> Simple </h2>
+              <p>
+                Enter your exact address to find the perfect ride. Choose who
+                you’d like to travel with. And book!
+              </p>
+            </div>
+            <div className="card-profile">
+              <h2> Standard </h2>
+              <p>
+                Designed for you to give you the comfort and standard you need
+                in choosing your rides
+              </p>
+            </div>
+          </div> */}
       </div>
     );
   }

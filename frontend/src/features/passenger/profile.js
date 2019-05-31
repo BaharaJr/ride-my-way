@@ -3,6 +3,17 @@ import "./profile.css";
 import { Link } from "react-router-dom";
 
 class Profile extends Component {
+  constructor() {
+    super();
+    this.state = {
+      rideOffers: []
+    };
+  }
+  componentDidMount() {
+    fetch('/api/v1/rideOffers')
+      .then(res => res.json())
+      .then(rideOffers => this.setState({ rideOffers }, () => console.log('rideOffers', rideOffers)));
+  }
   render() {
     return (
       <div>
@@ -69,30 +80,28 @@ class Profile extends Component {
               </div>
             </div>
           </div>
-          <h1 className="h-profile">Go literally anywhere. From anywhere.</h1>
-          <div className="p-profile">
-            <div className="card-profile">
-              <h2> Smart </h2>
-              <p>
-                With access to millions of journeys, you can quickly find people
-                nearby travelling your way.
-              </p>
-            </div>
-            <div className="card-profile">
-              <h2> Simple </h2>
-              <p>
-                Enter your exact address to find the perfect ride. Choose who
-                you’d like to travel with. And book!
-              </p>
-            </div>
-            <div className="card-profile">
-              <h2> Standard </h2>
-              <p>
-                Designed for you to give you the comfort and standard you need
-                in choosing your rides
-              </p>
-            </div>
-          </div>
+          <h1 className="tbl">Available Ride Offers</h1>
+          <table>
+            <thead>
+              <tr>
+                <th>Pickup</th>
+                <th>Drop-off</th>
+                <th>Date</th>
+                <th>Time</th>
+              </tr>
+            </thead>
+            <tr>
+              <td> {this.state.rideOffers.map(rideOffers => 
+              <li key={rideOffers.id}>{rideOffers.Pickup}</li>)}</td>
+              <td> {this.state.rideOffers.map(rideOffers => 
+              <li key={rideOffers.id}>{rideOffers.Dropoff}</li>)}</td>
+              <td>{this.state.rideOffers.map(rideOffers => 
+              <li key={rideOffers.id}>{rideOffers.Date}</li>)}</td>
+              <td>{this.state.rideOffers.map(rideOffers => 
+              <li key={rideOffers.id}>{rideOffers.Time}</li>)}</td>
+            </tr>
+            <tbody />
+          </table>
         </section>
       </div>
     );

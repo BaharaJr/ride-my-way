@@ -3,6 +3,17 @@ import "./profile.css";
 import { Link } from "react-router-dom";
 
 class Taken extends Component {
+  constructor() {
+    super();
+    this.state = {
+      rideTaken: []
+    };
+  }
+  componentDidMount() {
+    fetch('/api/v1/rideTaken')
+      .then(res => res.json())
+      .then(rideTaken => this.setState({ rideTaken }));
+  }
   render() {
     return (
       <div>
@@ -53,7 +64,7 @@ class Taken extends Component {
             <div className="col-rides">
               <div className="card">
                 <h3>Rides Taken</h3>
-                <span>56</span>
+                <span>5</span>
               </div>
             </div>
           </div>
@@ -69,25 +80,16 @@ class Taken extends Component {
               </tr>
             </thead>
             <tr>
-              <td>Magomeni</td>
-              <td>Buza</td>
-              <td>Harith Minhajj</td>
-              <td>T 234DFG</td>
-              <td>28/10/2019</td>
-            </tr>
-            <tr>
-              <td>Mliman</td>
-              <td>Seedspace</td>
-              <td>Leticia</td>
-              <td>T45DSA</td>
-              <td>22/10/2018</td>
-            </tr>
-            <tr>
-              <td>Magomeni</td>
-              <td>Buza</td>
-              <td>Harith Minhajj</td>
-              <td>T 234DFG</td>
-              <td>25/10/2019</td>
+              <td>{this.state.rideTaken.map(rideTaken => 
+              <li key={rideTaken.id}>{rideTaken.Pickup}</li>)}</td>
+              <td>{this.state.rideTaken.map(rideTaken => 
+              <li key={rideTaken.id}>{rideTaken.Dropoff}</li>)}</td>
+              <td>{this.state.rideTaken.map(rideTaken => 
+              <li key={rideTaken.id}>{rideTaken.Driver}</li>)}</td>
+              <td>{this.state.rideTaken.map(rideTaken => 
+              <li key={rideTaken.id}>{rideTaken.Car}</li>)}</td>
+              <td>{this.state.rideTaken.map(rideTaken => 
+              <li key={rideTaken.id}>{rideTaken.Date}</li>)}</td>
             </tr>
             <tbody />
           </table>
