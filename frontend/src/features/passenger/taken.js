@@ -8,56 +8,56 @@ class Taken extends Component {
       <div>
         <section id="sidemenu">
           <nav>
-            <div class="logo">
+            <div className="logo">
               <Link to="/profile">
                 <h1>Ride My Way</h1>
               </Link>
             </div>
-            <Link to="profile" class="active">
-              <i class="fas fa-home" />
+            <Link to="profile" className="active">
+              <i className="fas fa-home" />
               Home
             </Link>
             <Link to="/taken">
-              <i class="fas fa-car" />Rides Taken
+              <i className="fas fa-car" />Rides Taken
             </Link>
             <Link to="/request">
-              <i class="fas fa-car-side" />Request Ride
+              <i className="fas fa-car-side" />Request Ride
             </Link>
             <Link to="/rides">
-              <i class="fas fa-taxi" />View Rides
+              <i className="fas fa-taxi" />View Rides
             </Link>
-            <Link to="/signupdriver" class="dlink active">
-              <i class="fas fa-user-circle i-active" />Become a Driver
+            <Link to="/signupdriver" className="dlink active">
+              <i className="fas fa-user-circle i-active" />Become a Driver
             </Link>
           </nav>
         </section>
         <header>
-          <Link to="/notifications" class="notification">
-            <i class="fas fa-bell fass" />
-            <span class="counter">5</span>
+          <Link to="/notifications" className="notification">
+            <i className="fas fa-bell fass" />
+            <span className="counter">5</span>
           </Link>
           <Link to="/">
-            <div class="userimg" />
-            <i class="fas fa-caret-down fass">
-              <div class="dropdown-content" />
+            <div className="userimg" />
+            <i className="fas fa-caret-down fass">
+              <div className="dropdown-content" />
             </i>
           </Link>
         </header>
         <section id="content-area">
-          <div class="heading">
+          <div className="heading">
             <p> Hi Bennett</p>
           </div>
           <hr />
 
-          <div class="cards">
-            <div class="col-rides">
-              <div class="card">
+          <div className="cards">
+            <div className="col-rides">
+              <div className="card">
                 <h3>Rides Taken</h3>
                 <span>56</span>
               </div>
             </div>
           </div>
-          <h1 class="tbl">Rides Taken</h1>
+          <h1 className="tbl">Rides Taken</h1>
           <table>
             <thead>
               <tr>

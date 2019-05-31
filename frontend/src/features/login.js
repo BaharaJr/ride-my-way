@@ -15,7 +15,7 @@ class Login extends Component {
   render() {
     return (
       <div>
-        <div class="log">
+        <div className="log">
           <Link to="/">
             <p> Ride My Way</p>
           </Link>

@@ -24,51 +24,51 @@ class Request extends Component {
       <div>
         <section id="sidemenu">
           <nav>
-            <div class="logo">
+            <div className="logo">
               <Link to="/profile">
                 <h1>Ride My Way</h1>
               </Link>
             </div>
-            <Link to="profile" class="active">
-              <i class="fas fa-home i-active" />
+            <Link to="profile" className="active">
+              <i className="fas fa-home i-active" />
               Home
             </Link>
             <Link to="/taken">
-              <i class="fas fa-car" />
+              <i className="fas fa-car" />
               Rides Taken
             </Link>
             <Link to="./request">
-              <i class="fas fa-car-side" />
+              <i className="fas fa-car-side" />
               Request Ride
             </Link>
             <Link to="/rides">
-              <i class="fas fa-taxi" />
+              <i className="fas fa-taxi" />
               View Rides
             </Link>
-            <Link to="/signupdriver" class="dlink active">
-              <i class="fas fa-user-circle i-active" />
+            <Link to="/signupdriver" className="dlink active">
+              <i className="fas fa-user-circle i-active" />
               Become a Driver
             </Link>
           </nav>
         </section>
         <header>
-          <Link to="/notifications" class="notification">
-            <i class="fas fa-bell fass" />
-            <span class="counter">5</span>
+          <Link to="/notifications" className="notification">
+            <i className="fas fa-bell fass" />
+            <span className="counter">5</span>
           </Link>
           <Link to="/miniprofile">
-            <div class="user-img" />
-            <i class="fas fa-caret-down fass" />
+            <div className="user-img" />
+            <i className="fas fa-caret-down fass" />
           </Link>
         </header>
         <section id="content-area">
-          <div class="heading">
+          <div className="heading">
             <p> Hi Bennett</p>
           </div>
           <hr />
 
-          <h1 class="request">Find a ride</h1>
-          <div classNameName="div-group">
+          <h1 className="request">Find a ride</h1>
+          <div className="div-group">
             <p className="p-groups">Pick-up</p>
             <input type="text" placeholder="Meet me Here" className="inputs" />
             <p className="p-groups">Drop-off</p>

@@ -13,7 +13,7 @@ class SignupDriver extends Component {
   render() {
     return (
       <div>
-        <div class="log">
+        <div className="log">
           <Link to="/profile">
             <p> Ride My Way</p>
           </Link>
@@ -22,25 +22,25 @@ class SignupDriver extends Component {
         <div className="form-headers">
           <h3>Make Money While Driving</h3>
         </div>
-        <form classNameName="forms">
+        <form className="forms">
           <div className="input-groups">
-            <i class="fas fa-address-card" />
+            <i className="fas fa-address-card" />
             <input type="text" placeholder="Registered Names" />
           </div>
           <div className="input-groups">
-            <i class="far fa-id-badge" />
+            <i className="far fa-id-badge" />
             <input type="integer" placeholder="Driving Licence" />
           </div>
           <div className="input-groups">
-            <i class="fas fa-car" />
+            <i className="fas fa-car" />
             <input type="integer" placeholder="Car Number" />
           </div>
           <div className="input-groups">
-            <i class="fas fa-car-side" />
+            <i className="fas fa-car-side" />
             <input type="text" placeholder="Car Type" />
           </div>
           <div className="input-groups">
-            <i class="far fa-file-alt" />
+            <i className="far fa-file-alt" />
             <input type="integer" placeholder="Car Licence" />
           </div>
           <h1 className="btnss" onClick={this.handlePageChange}>

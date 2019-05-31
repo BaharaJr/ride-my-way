@@ -6,17 +6,13 @@ class Rideoffers extends Component {
   constructor() {
     super();
     this.state = {
-      rideoffers: []
+      rideOffers: []
     };
   }
   componentDidMount() {
-    fetch("/api/v1/rideOffers")
-      .then(res => res.json)
-      .then(rideoffers =>
-        this.setState({ rideoffers }, () =>
-          console.log("ride offers", rideoffers)
-        )
-      );
+    fetch('/api/v1/rideOffers')
+      .then(res => res.json())
+      .then(rideOffers => this.setState({ rideOffers }, () => console.log('rideOffers', rideOffers)));
   }
   render() {
     return (
@@ -81,12 +77,23 @@ class Rideoffers extends Component {
               </tr>
             </thead>
             <tr>
-              <td>Magomeni</td>
-              <td>Buza</td>
+              <td> {this.state.rideOffers.map(rideOffers => 
+              <li key={rideOffers.id}>{rideOffers.Pickup}</li>)}</td>
+              <td> {this.state.rideOffers.map(rideOffers => 
+              <li key={rideOffers.id}>{rideOffers.Dropoff}</li>)}</td>
               <td>Harith Minhajj</td>
               <td>28/10/2019</td>
             </tr>
-          </table>
+          </table> 
+          {/* <ul>
+          {this.state.rideOffers.bind(this)(rideOffers => 
+            <li key={rideOffers.id}>{rideOffers.Pickup}</li>)}
+          </ul>
+          <ul>
+            {this.state.rideOffers.map(rideOffers => 
+              <li key={rideOffers.id}>{rideOffers.Pickup}</li>)}
+          </ul>
+            */}
         </section>
       </div>
     );

@@ -13,58 +13,58 @@ class Driver extends Component {
                 <h1>Ride My Way</h1>
               </Link>
             </div>
-            <Link to="driver" class="active">
-              <i class="fas fa-home i-active" />
+            <Link to="driver" className="active">
+              <i className="fas fa-home i-active" />
               Home
             </Link>
             <Link to="./addoffer">
-              <i class="fas fa-plus-circle" />Add Offer
+              <i className="fas fa-plus-circle" />Add Offer
             </Link>
             <Link to="/riderequest">
-              <i class="fas fa-car-side" />View Requests
+              <i className="fas fa-car-side" />View Requests
             </Link>
             <Link to="/rideoffer">
-              <i class="fas fa-taxi" />Ride Offers
+              <i className="fas fa-taxi" />Ride Offers
             </Link>
           </nav>
         </section>
         <header>
-          <Link to="/notifications" class="notification">
-            <i class="fas fa-bell fass" />
-            <span class="counter">5</span>
+          <Link to="/notifications" className="notification">
+            <i className="fas fa-bell fass" />
+            <span className="counter">5</span>
           </Link>
           <Link to="/miniprofile">
-            <div class="userimg" />
-            <i class="fas fa-caret-down fass" />
+            <div className="userimg" />
+            <i className="fas fa-caret-down fass" />
           </Link>
         </header>
         <section id="content-area">
-          <div class="heading">
+          <div className="heading">
             <p> Hi Bennett</p>
           </div>
           <hr />
 
-          <div class="cards">
-            <div class="col-rides">
-              <div class="card">
+          <div className="cards">
+            <div className="col-rides">
+              <div className="card">
                 <h3>Rides Offers Created</h3>
                 <span>23</span>
               </div>
             </div>
-            <div class="col-rides">
-              <div class="card">
+            <div className="col-rides">
+              <div className="card">
                 <h3>Requests Accepted</h3>
                 <span>56</span>
               </div>
             </div>
-            <div class="col-rides">
-              <div class="card">
+            <div className="col-rides">
+              <div className="card">
                 <h3>Total Rides</h3>
                 <span>79</span>
               </div>
             </div>
           </div>
-          <h1 class="tbl">Ride Requests</h1>
+          <h1 className="tbl">Ride Requests</h1>
           <table>
             <thead>
               <tr>

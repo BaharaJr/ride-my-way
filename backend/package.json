@@ -33,5 +33,16 @@
       "error",
       "double"
     ]
+  },
+  "nodemonConfig": {
+    "restartable": "rs",
+    "ignore": [
+      "node_modules/**/node_modules", "README.md", "Spaces"
+    ],
+    "delay": "2500",
+    "env": {
+      "NODE_ENV": "development",
+      "PORT": 5000
+    }
   }
 }

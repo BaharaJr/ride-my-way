@@ -15,7 +15,7 @@ class Signup extends Component {
     return (
       <div>
         <div className="form-container">
-          <div class="log">
+          <div className="log">
             <Link to="/">
               <p> Ride My Way</p>
             </Link>
