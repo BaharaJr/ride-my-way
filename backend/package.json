@@ -37,7 +37,9 @@
   "nodemonConfig": {
     "restartable": "rs",
     "ignore": [
-      "node_modules/**/node_modules", "README.md", "Spaces"
+      "node_modules/**/node_modules",
+      "README.md",
+      "Spaces"
     ],
     "delay": "2500",
     "env": {
