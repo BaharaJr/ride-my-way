@@ -12,7 +12,7 @@ class Rideoffers extends Component {
   componentDidMount() {
     fetch('/api/v1/rideOffers')
       .then(res => res.json())
-      .then(rideOffers => this.setState({ rideOffers }, () => console.log('rideOffers', rideOffers)));
+      .then(rideOffers => this.setState({ rideOffers }));
   }
   render() {
     return (
