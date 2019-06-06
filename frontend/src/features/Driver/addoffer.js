@@ -78,9 +78,6 @@ class AddOffer extends Component {
                 placeholder="Drop-off here"
                 className="inputs"
               />
-              <p className="p-groups">Stopovers</p>
-              <p className="stop-over">Add your stopover points</p>
-              <input type="text" placeholder="Stopovers" className="inputs" />
               <p className="p-groups">Date & Time</p>
               <DatePicker
                 selected={this.state.startDate}

@@ -47,6 +47,10 @@ class Signup extends Component {
                 <i className="fas fa-key" />
                 <input type="password" placeholder="Password" />
               </div>
+              <div className="input-group">
+                <i className="fas fa-key" />
+                <input type="password" placeholder="Password" />
+              </div>
               <h1 className="btnss">
                 <Link to="/profile.js" />Sign Up
               </h1>

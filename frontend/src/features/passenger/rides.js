@@ -18,16 +18,20 @@ class Rides extends Component {
               Home
             </Link>
             <Link to="/taken">
-              <i className="fas fa-car" />Rides Taken
+              <i className="fas fa-car" />
+              Rides Taken
             </Link>
             <Link to="/request">
-              <i className="fas fa-car-side" />Request Ride
+              <i className="fas fa-car-side" />
+              Request Ride
             </Link>
             <Link to="/rides">
-              <i className="fas fa-taxi" />View Rides
+              <i className="fas fa-taxi" />
+              View Rides
             </Link>
             <Link to="/signupdriver" className="dlink active">
-              <i className="fas fa-user-circle i-active" />Become a Driver
+              <i className="fas fa-user-circle i-active" />
+              Become a Driver
             </Link>
           </nav>
         </section>

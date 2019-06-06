@@ -137,3 +137,7 @@ td {
 	padding: 15px 10px;
 	background: #fff;
 }
+
+li {
+	text-decoration: none;
+}
