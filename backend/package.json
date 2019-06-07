@@ -4,7 +4,8 @@
   "description": "Backend package for ride-my-way",
   "main": "app.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "start": "DEBUG=app nodemon.js"
   },
   "keywords": [
     "alcwithforloop",
@@ -13,7 +14,10 @@
   "author": "BaharaJr",
   "license": "WTFPL",
   "dependencies": {
+    "body-parser": "^1.19.0",
+    "debug": "^4.1.1",
     "express": "^4.17.0",
+    "morgan": "^1.9.1",
     "pg-promise": "^8.7.2"
   },
   "devDependencies": {
@@ -22,7 +26,7 @@
     "babel-jest": "^24.8.0",
     "eslint": "^5.16.0",
     "eslint-config-airbnb-base": "^13.1.0",
-    "eslint-plugin-import": "^2.17.2",
+    "eslint-plugin-import": "^2.17.3",
     "jest": "^24.8.0"
   },
   "rules": {

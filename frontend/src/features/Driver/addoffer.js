@@ -8,7 +8,7 @@ class AddOffer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      startDate: new Date()
+      startDate: new Date(),
     };
     this.handleChange = this.handleChange.bind(this);
   }

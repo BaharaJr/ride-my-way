@@ -1,19 +1,19 @@
-import React, { Component } from "react";
-import "./driver.css";
-import { Link } from "react-router-dom";
+import React, { Component } from 'react';
+import './driver.css';
+import { Link } from 'react-router-dom';
 
 class Rideoffers extends Component {
-  constructor() {
-    super();
-    this.state = {
-      rideOffers: []
-    };
-  }
-  componentDidMount() {
-    fetch('/api/v1/rideOffers')
-      .then(res => res.json())
-      .then(rideOffers => this.setState({ rideOffers }));
-  }
+  // constructor() {
+  //   super();
+  //   this.state = {
+  //     rideOffers: [],
+  //   };
+  // }
+  // componentDidMount() {
+  //   fetch("/api/v1/rideOffers")
+  //     .then(res => res.json())
+  //     .then(rideOffers => this.setState({ rideOffers }));
+  // }
   render() {
     return (
       <div>
@@ -76,17 +76,33 @@ class Rideoffers extends Component {
                 <th>Time</th>
               </tr>
             </thead>
-            <tr>
-              <td> {this.state.rideOffers.map(rideOffers => 
-              <p key={rideOffers.id}>{rideOffers.Pickup}</p>)}</td>
-              <td> {this.state.rideOffers.map(rideOffers => 
-              <p key={rideOffers.id}>{rideOffers.Dropoff}</p>)}</td>
-              <td> {this.state.rideOffers.map(rideOffers => 
-              <p key={rideOffers.id}>{rideOffers.Date}</p>)}</td>
-              <td> {this.state.rideOffers.map(rideOffers => 
-              <p key={rideOffers.id}>{rideOffers.Time}</p>)}</td>
-            </tr>
-          </table> 
+            {/* <tr>
+              <td>
+                {" "}
+                {this.state.rideOffers.map(rideOffers => (
+                  <p key={rideOffers.id}>{rideOffers.Pickup}</p>
+                ))}
+              </td>
+              <td>
+                {" "}
+                {this.state.rideOffers.map(rideOffers => (
+                  <p key={rideOffers.id}>{rideOffers.Dropoff}</p>
+                ))}
+              </td>
+              <td>
+                {" "}
+                {this.state.rideOffers.map(rideOffers => (
+                  <p key={rideOffers.id}>{rideOffers.Date}</p>
+                ))}
+              </td>
+              <td>
+                {" "}
+                {this.state.rideOffers.map(rideOffers => (
+                  <p key={rideOffers.id}>{rideOffers.Time}</p>
+                ))}
+              </td>
+            </tr> */}
+          </table>
         </section>
       </div>
     );
