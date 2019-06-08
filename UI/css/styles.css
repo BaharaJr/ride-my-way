@@ -88,6 +88,9 @@
 .disable {
 	opacity: 5;
 	visibility: visible;
+}.disable {
+	opacity: 5;
+	visibility: visible;
 }
 
 .modal {
