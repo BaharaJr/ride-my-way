@@ -25,3 +25,9 @@ yarn-debug.log*
 yarn-error.log*
 
 # https://github.com/facebook/create-react-app/issues/752
+
+/frontend
+
+frontend
+
+*frontend*
