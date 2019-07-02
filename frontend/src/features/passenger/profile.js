@@ -1,8 +1,25 @@
-import React, { Component } from "react";
-import "./profile.css";
-import { Link } from "react-router-dom";
+/* eslint-disable react/prefer-stateless-function */
+import React, { Component } from 'react';
+import './profile.css';
+import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 class Profile extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      rides: [],
+    };
+  }
+
+  async componentDidMount() {
+    const rides = (await axios.get('/rides')).data;
+    this.setState({
+      rides,
+    });
+  }
+
   render() {
     return (
       <div>
@@ -18,16 +35,20 @@ class Profile extends Component {
               Home
             </Link>
             <Link to="/taken">
-              <i className="fas fa-car" />Rides Taken
+              <i className="fas fa-car" />
+              Rides Taken
             </Link>
             <Link to="/request">
-              <i className="fas fa-car-side" />Request Ride
+              <i className="fas fa-car-side" />
+              Request Ride
             </Link>
             <Link to="/rides">
-              <i className="fas fa-taxi" />View Rides
+              <i className="fas fa-taxi" />
+              View Rides
             </Link>
             <Link to="/signupdriver" className="dlink active">
-              <i className="fas fa-user-circle i-active" />Become a Driver
+              <i className="fas fa-user-circle i-active" />
+              Become a Driver
             </Link>
           </nav>
         </section>
@@ -69,30 +90,42 @@ class Profile extends Component {
               </div>
             </div>
           </div>
-          <h1 className="h-profile">Go literally anywhere. From anywhere.</h1>
-          <div className="p-profile">
-            <div className="card-profile">
-              <h2> Smart </h2>
-              <p>
-                With access to millions of journeys, you can quickly find people
-                nearby travelling your way.
-              </p>
-            </div>
-            <div className="card-profile">
-              <h2> Simple </h2>
-              <p>
-                Enter your exact address to find the perfect ride. Choose who
-                you’d like to travel with. And book!
-              </p>
-            </div>
-            <div className="card-profile">
-              <h2> Standard </h2>
-              <p>
-                Designed for you to give you the comfort and standard you need
-                in choosing your rides
-              </p>
-            </div>
-          </div>
+          <h1 className="tbl">Available Ride Offers</h1>
+        <table>
+          <thead>
+            <tr>
+              <th>Pickup</th>
+              <th>Drop-off</th>
+              <th>Date</th>
+              <th>Time</th>
+            </tr>
+          </thead>
+          <tr>
+            <td>
+              {this.state.rides.map(rides => (
+                <p key={rides.ride_id}>{rides.pickup}</p>
+              ))}
+              {' '}
+            </td>
+            <td>
+              {this.state.rides.map(rides => (
+                <p key={rides.ride_id}>{rides.dropoff}</p>
+              ))}
+              {' '}
+            </td>
+            <td>
+              {this.state.rides.map(rides => (
+                <p key={rides.ride_id}>{rides.date}</p>
+              ))}
+            </td>
+            <td>
+              {this.state.rides.map(rides => (
+                <p key={rides.ride_id}>{rides.time}</p>
+              ))}
+            </td>
+          </tr>
+          <tbody />
+        </table>
         </section>
       </div>
     );

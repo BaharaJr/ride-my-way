@@ -20,7 +20,7 @@ class SignupDriver extends Component {
         </div>
 
         <div className="form-headers">
-          <h3>Make Money While Driving</h3>
+          <h3>Cut costs and have fun on your safari with Peers</h3>
         </div>
         <form className="forms">
           <div className="input-groups">

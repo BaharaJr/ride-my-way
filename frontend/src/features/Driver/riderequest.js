@@ -13,15 +13,15 @@ class RideRequests extends Component {
                 <h1>Ride My Way</h1>
               </Link>
             </div>
-            <Link to="driver" class="active">
-              <i class="fas fa-home i-active" />
+            <Link to="driver">
+              <i class="fas fa-home" />
               Home
             </Link>
             <Link to="/addoffer">
               <i class="fas fa-plus-circle" />Add Offer
             </Link>
-            <Link to="./riderequest">
-              <i class="fas fa-car-side" />View Requests
+            <Link to="./riderequest" class="active">
+              <i class="fas fa-car-side i-active" />View Requests
             </Link>
             <Link to="/rideoffer">
               <i class="fas fa-taxi" />Ride Offers

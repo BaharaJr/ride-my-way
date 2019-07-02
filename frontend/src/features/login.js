@@ -1,17 +1,10 @@
-import React, { Component } from "react";
-import "./landing.css";
-import { Link } from "react-router-dom";
-// import Background from './media/ride';
+/* eslint-disable react/prefer-stateless-function */
+/* eslint-disable react/destructuring-assignment */
+import React, { Component } from 'react';
+import './landing.css';
+import { Link } from 'react-router-dom';
 
 class Login extends Component {
-  constuctor() {
-    this.handlePageChange = this.handlePageChange.bind(this);
-    this.handleRouteChange = this.handleRouteChange.bind(this);
-  }
-  handlePageChange() {
-    window.location = "/profile";
-  }
-
   render() {
     return (
       <div>
@@ -28,17 +21,19 @@ class Login extends Component {
         <form className="form">
           <div className="input-group">
             <i className="fas fa-user-check" />
-            <input type="text" placeholder="Username" />
+            <input type="username" name="username" placeholder="username" />
           </div>
           <div className="input-group">
             <i className="fas fa-key" />
-            <input type="password" placeholder="Password" />
+            <input
+              type="password"
+              name="password"
+              placeholder="Enter password"
+            />
           </div>
-          <h1 onClick={this.handlePageChange}>
-            {" "}
-            <Link to="/profile.js" />
-            LogIn
-          </h1>
+          <Link to="/profile">
+            <h1>LogIn</h1>
+          </Link>
         </form>
       </div>
     );

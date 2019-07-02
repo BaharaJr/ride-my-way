@@ -13,12 +13,12 @@ class Taken extends Component {
                 <h1>Ride My Way</h1>
               </Link>
             </div>
-            <Link to="profile" className="active">
+            <Link to="profile">
               <i className="fas fa-home" />
               Home
             </Link>
-            <Link to="/taken">
-              <i className="fas fa-car" />Rides Taken
+            <Link to="/taken" className="active">
+              <i className="fas fa-car i-active" />Rides Taken
             </Link>
             <Link to="/request">
               <i className="fas fa-car-side" />Request Ride

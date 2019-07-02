@@ -181,13 +181,13 @@ thead {
   background: grey;
 }
 
-th {
+th p {
   font-size: 0.8rem;
   text-transform: uppercase;
   padding: 15px 10px;
 }
 
-tbody {
+tbody p {
   background: #fff;
   text-align: center;
 }

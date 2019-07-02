@@ -1,19 +1,25 @@
+/* eslint-disable react/destructuring-assignment */
 import React, { Component } from 'react';
 import './driver.css';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 class Rideoffers extends Component {
-  // constructor() {
-  //   super();
-  //   this.state = {
-  //     rideOffers: [],
-  //   };
-  // }
-  // componentDidMount() {
-  //   fetch("/api/v1/rideOffers")
-  //     .then(res => res.json())
-  //     .then(rideOffers => this.setState({ rideOffers }));
-  // }
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      rides: [],
+    };
+  }
+
+  async componentDidMount() {
+    const rides = (await axios.get('/rides')).data;
+    this.setState({
+      rides,
+    });
+  }
+
   render() {
     return (
       <div>
@@ -24,20 +30,20 @@ class Rideoffers extends Component {
                 <h1>Ride My Way</h1>
               </Link>
             </div>
-            <Link to="driver" className="active">
-              <i className="fas fa-home i-active" />
+            <Link to="driver">
+              <i className="fas fa-home" />
               Home
             </Link>
             <Link to="/addoffer">
-              <i className="fas fa-plus-circle" />
+              <i className="fas fa-plus-circle i-active" />
               Add Offer
             </Link>
             <Link to="./riderequest">
               <i className="fas fa-car-side" />
               View Requests
             </Link>
-            <Link to="/rideoffer">
-              <i className="fas fa-taxi" />
+            <Link to="/rideoffer" className="active">
+              <i className="fas fa-taxi i-active" />
               Ride Offers
             </Link>
           </nav>
@@ -76,32 +82,32 @@ class Rideoffers extends Component {
                 <th>Time</th>
               </tr>
             </thead>
-            {/* <tr>
+            <tr>
               <td>
-                {" "}
-                {this.state.rideOffers.map(rideOffers => (
-                  <p key={rideOffers.id}>{rideOffers.Pickup}</p>
+                {' '}
+                {this.state.rides.map(rides => (
+                  <p key={rides.ride_id}>{rides.pickup}</p>
                 ))}
               </td>
               <td>
-                {" "}
-                {this.state.rideOffers.map(rideOffers => (
-                  <p key={rideOffers.id}>{rideOffers.Dropoff}</p>
+                {' '}
+                {this.state.rides.map(rides => (
+                  <p key={rides.ride_id}>{rides.dropoff}</p>
                 ))}
               </td>
               <td>
-                {" "}
-                {this.state.rideOffers.map(rideOffers => (
-                  <p key={rideOffers.id}>{rideOffers.Date}</p>
+                {' '}
+                {this.state.rides.map(rides => (
+                  <p key={rides.ride_id}>{rides.date}</p>
                 ))}
               </td>
               <td>
-                {" "}
-                {this.state.rideOffers.map(rideOffers => (
-                  <p key={rideOffers.id}>{rideOffers.Time}</p>
+                {' '}
+                {this.state.rides.map(rides => (
+                  <p key={rides.ride_id}>{rides.time}</p>
                 ))}
               </td>
-            </tr> */}
+            </tr>
           </table>
         </section>
       </div>

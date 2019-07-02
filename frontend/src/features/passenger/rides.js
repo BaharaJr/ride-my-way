@@ -1,8 +1,25 @@
-import React, { Component } from "react";
-import "./profile.css";
-import { Link } from "react-router-dom";
+/* eslint-disable react/destructuring-assignment */
+import React, { Component } from 'react';
+import axios from 'axios';
+import './profile.css';
+import { Link } from 'react-router-dom';
 
 class Rides extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      rides: [],
+    };
+  }
+
+  async componentDidMount() {
+    const rides = (await axios.get('/rides')).data;
+    this.setState({
+      rides,
+    });
+  }
+
   render() {
     return (
       <div>
@@ -13,7 +30,7 @@ class Rides extends Component {
                 <h1>Ride My Way</h1>
               </Link>
             </div>
-            <Link to="profile" className="active">
+            <Link to="profile">
               <i className="fas fa-home" />
               Home
             </Link>
@@ -25,8 +42,8 @@ class Rides extends Component {
               <i className="fas fa-car-side" />
               Request Ride
             </Link>
-            <Link to="/rides">
-              <i className="fas fa-taxi" />
+            <Link to="/rides" className="active">
+              <i className="fas fa-taxi i-active" />
               View Rides
             </Link>
             <Link to="/signupdriver" className="dlink active">
@@ -77,31 +94,33 @@ class Rides extends Component {
               <tr>
                 <th>Pickup</th>
                 <th>Drop-off</th>
-                <th>Driver</th>
                 <th>Date</th>
                 <th>Time</th>
               </tr>
             </thead>
             <tr>
-              <td>Magomeni</td>
-              <td>Buza</td>
-              <td>Harith Minhajj</td>
-              <td>28/10/2019</td>
-              <td>28/10/2019</td>
-            </tr>
-            <tr>
-              <td>Mliman</td>
-              <td>Seedspace</td>
-              <td>5678909876543</td>
-              <td>22/10/2018</td>
-              <td>28/10/2019</td>
-            </tr>
-            <tr>
-              <td>Magomeni</td>
-              <td>Buza</td>
-              <td>Harith Minhajj</td>
-              <td>25/10/2019</td>
-              <td>28/10/2019</td>
+              <td>
+                {this.state.rides.map(rides => (
+                  <p key={rides.ride_id}>{rides.pickup}</p>
+                ))}
+                {' '}
+              </td>
+              <td>
+                {this.state.rides.map(rides => (
+                  <p key={rides.ride_id}>{rides.dropoff}</p>
+                ))}
+                {' '}
+              </td>
+              <td>
+                {this.state.rides.map(rides => (
+                  <p key={rides.ride_id}>{rides.date}</p>
+                ))}
+              </td>
+              <td>
+                {this.state.rides.map(rides => (
+                  <p key={rides.ride_id}>{rides.time}</p>
+                ))}
+              </td>
             </tr>
             <tbody />
           </table>

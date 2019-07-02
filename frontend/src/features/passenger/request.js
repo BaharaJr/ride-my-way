@@ -1,24 +1,12 @@
-import React, { Component } from "react";
-import "./profile.css";
-import { Link } from "react-router-dom";
-import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
+import React, { Component } from 'react';
+import './profile.css';
+import { Link } from 'react-router-dom';
+// import DatePicker from 'react-datepicker';
+import axios from 'axios';
+// import 'react-datepicker/dist/react-datepicker.css';
 
 class Request extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      startDate: new Date()
-    };
-    this.handleChange = this.handleChange.bind(this);
-  }
-
-  handleChange(date) {
-    this.setState({
-      startDate: date
-    });
-  }
-
+ 
   render() {
     return (
       <div>
@@ -29,16 +17,16 @@ class Request extends Component {
                 <h1>Ride My Way</h1>
               </Link>
             </div>
-            <Link to="profile" className="active">
-              <i className="fas fa-home i-active" />
+            <Link to="profile">
+              <i className="fas fa-home" />
               Home
             </Link>
             <Link to="/taken">
               <i className="fas fa-car" />
               Rides Taken
             </Link>
-            <Link to="./request">
-              <i className="fas fa-car-side" />
+            <Link to="./request" className = "active">
+              <i className="fas fa-car-side i-active" />
               Request Ride
             </Link>
             <Link to="/rides">
@@ -73,16 +61,16 @@ class Request extends Component {
             <input type="text" placeholder="Meet me Here" className="inputs" />
             <p className="p-groups">Drop-off</p>
             <input type="text" placeholder="Drop-off here" className="inputs" />
-            <DatePicker
+            {/* <DatePicker
               selected={this.state.startDate}
               timeInputLabel="Time:"
               onChange={this.handleChange}
               dateFormat="MMM d, yyyy || h:mm aa"
               showTimeInput
               className="datepicker-input"
-            />
+            /> */}
             <h1 className="btnss">
-              {" "}
+              {' '}
               <Link to="/rideoffer" />
               Find
             </h1>

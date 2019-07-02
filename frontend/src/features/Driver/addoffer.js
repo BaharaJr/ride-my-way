@@ -1,8 +1,8 @@
-import React, { Component } from "react";
-import "./driver.css";
-import { Link } from "react-router-dom";
-import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
+import React, { Component } from 'react';
+import './driver.css';
+import { Link } from 'react-router-dom';
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
 
 class AddOffer extends Component {
   constructor(props) {
@@ -15,9 +15,10 @@ class AddOffer extends Component {
 
   handleChange(date) {
     this.setState({
-      startDate: date
+      startDate: date,
     });
   }
+
   render() {
     return (
       <div>
@@ -28,12 +29,12 @@ class AddOffer extends Component {
                 <h1>Ride My Way</h1>
               </Link>
             </div>
-            <Link to="driver" className="active">
+            <Link to="driver">
               <i className="fas fa-home" />
               Home
             </Link>
-            <Link to="/addoffer">
-              <i className="fas fa-plus-circle" />
+            <Link to="/addoffer" className="active">
+              <i className="fas fa-plus-circle i-active" />
               Add Offer
             </Link>
             <Link to="./riderequest">
@@ -88,7 +89,7 @@ class AddOffer extends Component {
                 className="datepicker-input"
               />
               <h1 className="btnss">
-                {" "}
+                {' '}
                 <Link to="/rideoffer" />
                 Add Offer
               </h1>

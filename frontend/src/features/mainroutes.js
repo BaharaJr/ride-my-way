@@ -1,17 +1,18 @@
-import React from "react";
-import HomePage from "./home";
-import { Route, Switch } from "react-router-dom";
-import Profile from "./passenger/profile";
-import Request from "./passenger/request";
-import SignupDriver from "./Driver/signupdriver";
-import Driver from "./Driver/driver";
-import Login from "./login";
-import Signup from "./signup";
-import RideRequests from "./Driver/riderequest";
-import AddOffer from "./Driver/addoffer";
-import RideOffers from "./Driver/rideoffer";
-import Ride from "./passenger/rides";
-import Taken from "./passenger/taken";
+import React from 'react';
+import { Route, Switch } from 'react-router-dom';
+import HomePage from './home';
+import Profile from './passenger/profile';
+import Request from './passenger/request';
+import SignupDriver from './Driver/signupdriver';
+import Driver from './Driver/driver';
+import Login from './login';
+import Signup from './signup';
+import RideRequests from './Driver/riderequest';
+import AddOffer from './Driver/addoffer';
+import RideOffers from './Driver/rideoffer';
+import Ride from './passenger/rides';
+import Taken from './passenger/taken';
+import Verified from './auth';
 
 const MainRoutes = () => (
   <Switch>
@@ -27,6 +28,7 @@ const MainRoutes = () => (
     <Route path="/rideoffer" component={RideOffers} />
     <Route path="/rides" component={Ride} />
     <Route path="/taken" component={Taken} />
+    <Route path="/Verified" component={Verified} />
   </Switch>
 );
 
