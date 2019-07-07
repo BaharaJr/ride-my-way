@@ -1,0 +1,488 @@
+{
+	"swagger": "2.0",
+	"info": {
+		"description": "",
+		"version": "1.0.0",
+		"title": "Ride My Way",
+		"contact": {
+			"email": "bennytz201@gmail.com"
+		},
+		"license": {
+			"name": "Apache 2.0",
+			"url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+		}
+	},
+	"tags": [
+		{
+			"name": "rides",
+			"description": "Rides and Ride Requests"
+		},
+		{
+			"name": "user",
+			"description": "User Operations"
+		},
+		{
+			"name": "requests"
+		}
+	],
+	"description": "Ride Requests",
+	"schemes": [
+		"https",
+		"http"
+	],
+	"paths": {
+		"/users/rides": {
+			"post": {
+				"tags": [
+					"rides"
+				],
+				"summary": "Create a ride offer",
+				"description": "",
+				"operationId": "addRide",
+				"consumes": [
+					"application/json",
+					"application/xml"
+				],
+				"produces": [
+					"application/xml",
+					"application/json"
+				],
+				"parameters": [
+					{
+						"in": "body",
+						"name": "body",
+						"description": "Ride object offer to be created",
+						"required": true,
+						"schema": {
+							"$ref": "#/definitions/Ride"
+						}
+					}
+				],
+				"responses": {
+					"405": {
+						"description": "Invalid input"
+					}
+				},
+				"security": [
+					{
+						"ridemyway_auth": [
+							"write:rides",
+							"read:rides"
+						]
+					}
+				]
+			}
+		},
+		"/rides": {
+			"get": {
+				"tags": [
+					"rides"
+				],
+				"summary": "Fetch the details of a single ride",
+				"description": "Returns all rides available in the system",
+				"operationId": "getRides",
+				"produces": [
+					"application/json"
+				],
+				"parameters": [],
+				"responses": {
+					"200": {
+						"description": "successful operation",
+						"schema": {
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "integer",
+									"format": "int64"
+								},
+								"pickup": {
+									"type": "string",
+									"example": "Ubungo"
+								},
+								"dropoff": {
+									"type": "string",
+									"example": "Mikese"
+								},
+								"date": {
+									"type": "string",
+									"example": "2019-10-28"
+								},
+								"time": {
+									"type": "integer",
+									"example": "1400"
+								}
+							}
+						}
+					}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
+			}
+		},
+		"/rides/{rideId}": {
+			"get": {
+				"tags": [
+					"rides"
+				],
+				"summary": "Find ride by ID",
+				"description": "Returns a single single",
+				"operationId": "getRideById",
+				"produces": [
+					"application/xml",
+					"application/json"
+				],
+				"parameters": [
+					{
+						"name": "rideId",
+						"in": "path",
+						"description": "ID of ride to return",
+						"required": true,
+						"type": "integer",
+						"format": "int64"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "successful operation",
+						"schema": {
+							"$ref": "#/definitions/Ride"
+						}
+					},
+					"400": {
+						"description": "Invalid ID supplied"
+					},
+					"404": {
+						"description": "Ride not found"
+					}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
+			}
+		},
+		"/users/rides/{rideId}/requests": {
+			"get": {
+				"tags": [
+					"requests"
+				],
+				"summary": "Fetch all ride requests",
+				"description": "Returns all ride requests available in the system",
+				"operationId": "getRideRequests",
+				"produces": [
+					"application/json"
+				],
+				"parameters": [],
+				"responses": {
+					"200": {
+						"description": "successful operation",
+						"schema": {
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "integer",
+									"format": "int64"
+								},
+								"pickup": {
+									"type": "string",
+									"example": "Ubungo"
+								},
+								"dropoff": {
+									"type": "string",
+									"example": "Mikese"
+								},
+								"date": {
+									"type": "string",
+									"example": "2019-10-28"
+								},
+								"time": {
+									"type": "integer",
+									"example": "1400"
+								}
+							}
+						}
+					}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
+			}
+		},
+		"/rides/{rideId}/requests": {
+			"post": {
+				"tags": [
+					"requests"
+				],
+				"summary": "Make a request to join a ride",
+				"description": "User to indicates interest in a specific available ride.",
+				"operationId": "rideRequest",
+				"produces": [
+					"application/xml",
+					"application/json"
+				],
+				"parameters": [
+					{
+						"name": "requestId",
+						"in": "header",
+						"required": false,
+						"type": "string"
+					},
+					{
+						"name": "rideId",
+						"in": "path",
+						"description": "Ride id to join",
+						"required": true,
+						"type": "integer",
+						"format": "int64"
+					}
+				],
+				"responses": {
+					"400": {
+						"description": "Invalid ID supplied"
+					},
+					"404": {
+						"description": "Ride not found"
+					}
+				},
+				"security": [
+					{
+						"ridemyway_auth": [
+							"write:rides",
+							"read:rides"
+						]
+					}
+				]
+			}
+		},
+		"/users/rides/<rideId>/requests/<requestId>": {
+			"put": {
+				"tags": [
+					"requests"
+				],
+				"summary": "Accept or reject a ride request",
+				"description": "",
+				"operationId": "rideRequestOptions",
+				"produces": [
+					"application/xml",
+					"application/json"
+				],
+				"parameters": [
+					{
+						"name": "requestId",
+						"in": "header",
+						"required": false,
+						"type": "string"
+					},
+					{
+						"name": "rideId",
+						"in": "path",
+						"description": "Ride id to join",
+						"required": true,
+						"type": "integer",
+						"format": "int64"
+					}
+				],
+				"responses": {
+					"400": {
+						"description": "Invalid ID supplied"
+					},
+					"404": {
+						"description": "Ride not found"
+					}
+				},
+				"security": [
+					{
+						"ridemyway_auth": [
+							"write:rides",
+							"read:rides"
+						]
+					}
+				]
+			}
+		},
+		"/auth/register": {
+			"post": {
+				"tags": [
+					"user"
+				],
+				"summary": "Register a user",
+				"description": "This can only be done by the logged in user.",
+				"operationId": "createUser",
+				"produces": [
+					"application/xml",
+					"application/json"
+				],
+				"parameters": [
+					{
+						"in": "body",
+						"name": "body",
+						"description": "Created user object",
+						"required": true,
+						"schema": {
+							"$ref": "#/definitions/User"
+						}
+					}
+				],
+				"responses": {
+					"default": {
+						"description": "successful operation"
+					}
+				}
+			}
+		},
+		"/auth/login": {
+			"post": {
+				"tags": [
+					"user"
+				],
+				"summary": "Login in a user",
+				"description": "",
+				"operationId": "loginUser",
+				"produces": [
+					"application/xml",
+					"application/json"
+				],
+				"parameters": [
+					{
+						"name": "email",
+						"in": "query",
+						"description": "The user email for login",
+						"required": true,
+						"type": "string"
+					},
+					{
+						"name": "password",
+						"in": "query",
+						"description": "The password for login in clear text",
+						"required": true,
+						"type": "string"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "successful operation",
+						"schema": {
+							"type": "string"
+						},
+						"headers": {
+							"X-Rate-Limit": {
+								"type": "integer",
+								"format": "int32",
+								"description": "calls per hour allowed by the user"
+							},
+							"X-Expires-After": {
+								"type": "string",
+								"format": "date-time",
+								"description": "date in UTC when token expires"
+							}
+						}
+					},
+					"400": {
+						"description": "Invalid username/password supplied"
+					}
+				}
+			}
+		},
+		"/auth/logout": {
+			"get": {
+				"tags": [
+					"user"
+				],
+				"summary": "Logs out current logged in user session",
+				"description": "",
+				"operationId": "logoutUser",
+				"produces": [
+					"application/xml",
+					"application/json"
+				],
+				"parameters": [],
+				"responses": {
+					"default": {
+						"description": "successful operation"
+					}
+				}
+			}
+		}
+	},
+	"securityDefinitions": {
+		"ridemyway_auth": {
+			"type": "oauth2",
+			"authorizationUrl": "https://safirinami.herokuapp.com",
+			"flow": "implicit",
+			"scopes": {
+				"write:rides": "modify rides in your account",
+				"read:rides": "read your rides"
+			}
+		},
+		"api_key": {
+			"type": "apiKey",
+			"name": "api_key",
+			"in": "header"
+		}
+	},
+	"definitions": {
+		"User": {
+			"type": "object",
+			"properties": {
+				"id": {
+					"type": "integer",
+					"format": "int64"
+				},
+				"name": {
+					"type": "string"
+				},
+				"username": {
+					"type": "string"
+				},
+				"email": {
+					"type": "string"
+				},
+				"password": {
+					"type": "string"
+				},
+				"userStatus": {
+					"type": "integer",
+					"format": "int32",
+					"description": "User Status"
+				}
+			},
+			"xml": {
+				"name": "User"
+			}
+		},
+		"Ride": {
+			"type": "object",
+			"required": [
+				"name"
+			],
+			"properties": {
+				"id": {
+					"type": "integer",
+					"format": "int64"
+				},
+				"pickup": {
+					"type": "string",
+					"example": "Ubungo"
+				},
+				"dropoff": {
+					"type": "string",
+					"example": "Mikese"
+				},
+				"date": {
+					"type": "string",
+					"example": "2019-10-28"
+				},
+				"time": {
+					"type": "integer",
+					"example": "1400"
+				}
+			}
+		}
+	}
+}
