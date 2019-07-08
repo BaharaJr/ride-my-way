@@ -14,8 +14,8 @@
   "license": "MIT",
   "dependencies": {
     "@babel/cli": "^7.4.4",
-    "@babel/core": "^7.4.5",
-    "@babel/node": "^7.4.5",
+    "@babel/core": "^7.5.0",
+    "@babel/node": "^7.5.0",
     "@babel/polyfill": "^7.4.4",
     "@babel/preset-env": "^7.4.4",
     "@babel/register": "^7.4.4",
@@ -50,7 +50,6 @@
     "pg": "^7.11.0",
     "pg-hstore": "^2.3.3",
     "pg-promise": "^8.7.2",
-    "react-ace": "^7.0.2",
     "regenerator-runtime": "^0.13.2",
     "rimraf": "^2.6.3",
     "swagger-editor": "^3.6.31",
@@ -58,8 +57,6 @@
     "swagger-ui-express": "^4.0.7",
     "webpack": "^4.34.0",
     "webpack-cli": "^3.3.4",
-    "yamljs": "^0.3.0",
-    "@babel/core": "^7.5.0",
-    "@babel/node": "^7.5.0"
+    "yamljs": "^0.3.0"
   }
 }
