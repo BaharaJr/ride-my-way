@@ -15,9 +15,6 @@ tags:
   description: "User Operations"
 - name: "requests"
 description: "Ride Requests"
-schemes:
-- "https"
-- "http"
 paths:
 
   /users/rides:

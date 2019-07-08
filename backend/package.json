@@ -1,12 +1,16 @@
 {
   "name": "ride-my-way",
   "version": "1.0.0",
+  "engines": {
+    "node": "12.6.0"
+  },
   "description": "API for ride my way carpooling",
   "scripts": {
     "start": "babel-node app.js",
     "dev": "NODE_ENV=development npm run watch ./app",
     "prod": "npm run build && NODE_ENV=production node ./dist/bin/www",
-    "build": "npm run clean && babel ./src --out-dir dist",
+    "build": "babel  --out-dir build/ --copy-files",
+    "heroku-postbuild": "babel --out-dir build/ --copy-files",
     "clean": "rimraf dist",
     "watch": "nodemon --config ./nodemon.json --"
   },
