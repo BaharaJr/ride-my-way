@@ -50,6 +50,7 @@
     "pg": "^7.11.0",
     "pg-hstore": "^2.3.3",
     "pg-promise": "^8.7.2",
+    "react-ace": "^7.0.2",
     "regenerator-runtime": "^0.13.2",
     "rimraf": "^2.6.3",
     "swagger-editor": "^3.6.31",

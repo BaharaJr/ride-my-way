@@ -10,6 +10,9 @@ router.post('/auth/login', User.login);
 router.get('/rides', Rides.getAll);
 router.get('/rides/:id', Rides.getOne);
 router.post('/users/rides', Rides.create);
+router.get('/', (req,res)=>{
+    res.send('APIS');
+})
 router.use('/', swaggerUi.serve);
 
 export default router;

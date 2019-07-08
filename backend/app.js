@@ -52,5 +52,5 @@ app.use((err, req, res, next) => {
   });
 });
 server.listen(port, hostname, () => {
-  console.log(chalk.yellow(`Mixing up things on port ${port}`));
+  console.log(chalk.yellow('Mixing up things on port'));
 });
