@@ -1,91 +1,55 @@
-#!/usr/bin/env node
-
-/**
- * Module dependencies.
- */
-
-import debugLib from 'debug';
+/* eslint-disable no-console */
+import express from 'express';
+import logger from 'morgan';
+import cookieParser from 'cookie-parser';
+import { json, urlencoded } from 'body-parser';
+import cors from 'cors';
 import http from 'http';
-import app from '../app';
+import router from './routes/index';
+import chalk from 'chalk';
+import "@babel/polyfill";
+import swaggerUi from 'swagger-ui-express';
+import YAML from 'yamljs';
+const swaggerDocument = YAML.load('./api/swagger/swagger.yaml');
 
 
-const debug = debugLib('backend:server');
+const app = express();
 
-/**
- * Get port from environment and store in Express.
- */
-
-const port = normalizePort(process.env.PORT || '5000');
-app.set('port', port);
-
-/**
- * Create HTTP server.
- */
-
+const hostname = 'localhost';
 const server = http.createServer(app);
 
-/**
- * Listen on provided port, on all network interfaces.
- */
+const bodyParser = require('body-parser');
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
 
-server.listen(port);
-server.on('error', onError);
-server.on('listening', onListening);
+var options = {
+  customCss: '.swagger-ui .topbar { display: none }'
+};
 
-/**
- * Normalize a port into a number, string, or false.
- */
+app.use(express.json());
+app.use(logger('dev'));
+app.use(cookieParser('process.env.COOKIE_SECRET'));
+app.use(cors());
+app.use(router);
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument, options));
 
-function normalizePort(val) {
-  let port = parseInt(val, 10);
+// catch 404 and forward to error handler
+app.use((req, res, next) => {
+  const err = new Error('Not Found');
+  err.status = 404;
+  next(err);
+});
 
-  if (isNaN(port)) {
-    // named pipe
-    return val;
-  }
-
-  if (port >= 0) {
-    // port number
-    return port;
-  }
-
-  return false;
-}
-
-/**
- * Event listener for HTTP server "error" event.
- */
-
-function onError(error) {
-  if (error.syscall !== 'listen') {
-    throw error;
-  }
-
-  let bind = typeof port === 'string' ? `Pipe ${  port}` : `Port ${  port}`;
-
-  // handle specific listen errors with friendly messages
-  switch (error.code) {
-    case 'EACCES':
-      /* eslint-disable no-console */
-      console.error(`${bind  } requires elevated privileges`);
-      process.exit(1);
-      break;
-    case 'EADDRINUSE':
-      console.error(`${bind  } is already in use`);
-      process.exit(1);
-      break;
-    default:
-      throw error;
-  }
-}
-
-/**
- * Event listener for HTTP server "listening" event.
- */
-
-function onListening() {
-  let addr = server.address();
-  let bind = typeof addr === 'string' ? `pipe ${  addr}` : `port ${  addr.port}`;
-  console.log(`Mixing up things on ${bind}`);
-  debug(`Mixing up things on ${  bind}`);
-}
+// error handler
+app.use((err, req, res, next) => {
+  res.status(err.status || 500);
+  res.json({
+    message: err.message,
+    error: req.app.get('env') === 'development' ? err : {},
+  });
+});
+server.listen(process.env.PORT || 5000, hostname, () => {
+  console.log(chalk.yellow('App is Live'));
+});

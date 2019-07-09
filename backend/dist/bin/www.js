@@ -90,6 +90,4 @@ function onError(error) {
 function onListening() {
   var addr = server.address();
   var bind = typeof addr === 'string' ? "pipe ".concat(addr) : "port ".concat(addr.port);
-  console.log("Mixing up things on ".concat(bind));
-  debug("Mixing up things on ".concat(bind));
 }

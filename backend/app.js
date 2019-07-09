@@ -16,7 +16,6 @@ const swaggerDocument = YAML.load('./api/swagger/swagger.yaml');
 const app = express();
 
 const hostname = 'localhost';
-const port = 5000;
 const server = http.createServer(app);
 
 const bodyParser = require('body-parser');
@@ -51,6 +50,6 @@ app.use((err, req, res, next) => {
     error: req.app.get('env') === 'development' ? err : {},
   });
 });
-server.listen(port, hostname, () => {
-  console.log(chalk.yellow('Mixing up things on port'));
+server.listen(process.env.PORT || 5000, hostname, () => {
+  console.log(chalk.yellow('App is Live'));
 });
