@@ -37,7 +37,7 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument, options))
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
-  const err = new Error('Not Found');
+  const err = new Error('Something went wrong. Be assured we\'re working on it!');
   err.status = 404;
   next(err);
 });
@@ -50,6 +50,6 @@ app.use((err, req, res, next) => {
     error: req.app.get('env') === 'development' ? err : {},
   });
 });
-server.listen(process.env.PORT || 5000, hostname, () => {
+server.listen(process.env.PORT || 5000, () => {
   console.log(chalk.yellow('App is Live'));
 });

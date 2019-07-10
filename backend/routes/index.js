@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import Rides from '../controllers/rides';
-import User from '../auth';
+import User from '../auth/index';
 import swaggerUi from 'swagger-ui-express';
 
 const router = Router();
