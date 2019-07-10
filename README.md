@@ -1,24 +1,55 @@
-RIDE-MY-WAY
+# Ride My Way
 
-This is the web Application that enable use to find ride to somewhere in town. Application requires user to sign up and having the profile with person information such as his name, home address, workplace address, phone number, and many more...
+An carpooling App where users create, offer and share rides
 
-Functionality of Web App
-User Signup && Signin
+## Functionality of Web App
 
-Page where user can do the following:
+- User Authentication ( Signup & Signin)
+- User can do the following:
 
-View all available ride offers.
-See the details of a ride and respond to it
-Offer a ride
-View and accept requests for the ride offer he/she created
-A page or pages for a user's profile which, at minimum diplays:
+  - View all available ride offers.
+  - See the details of a ride and respond to it
+  - Offer a ride
+  - View and accept requests for the ride offer he/she created
 
-The number of rides the user has given
-The number of rides the user has takes
-List of rides taken and given
-Tools && Languages used
+- User profile which, at minimum diplays:
+  - The number of rides the user has given
+  - The number of rides the user has takes
+  - List of rides taken and given
 
-Languages
-Html (Markup language)
-Css (Styling Language)
-Javascript (Interactivity --> React to user Actions On the Web app)
+## Engines
+- nodeJs
+- npm
+
+## Linters
+- AirBnB Eslint
+
+## Transpilers
+- Babel
+
+## Testing and Continuous Integration
+- Travis CI
+- Jest and Supertest
+
+## Languages
+
+- Html
+- Css
+- Javascript
+
+### Getting started
+
+## Requirements
+
+- [nodeJs](https://nodejs.org/en/download/)
+
+- [npm](https://www.npmjs.com/get-npm) (It comes with nodeJS v12)
+
+## Project setup
+
+Install nodejs dependencies
+
+```
+npm install
+```
+
